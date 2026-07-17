@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.business-type-card {
+  @apply px-10 py-6 rounded-lg bg-white hover:bg-blue-400 shadow-xl;
+}
+
+.business-type-card-heading {
+  @apply text-xl font-semibold mb-2;
+}
+
+.business-type-card:hover .business-type-card-heading {
+  @apply text-xl font-semibold mb-2 text-white;
+}
+
+.business-type-card-desc {
+  @apply text-lg mb-4;
+}
+
+.business-type-card:hover .business-type-card-desc {
+  @apply text-lg mb-4 text-white;
+}
+
+.business-type-card-button {
+  @apply hover:bg-blue-600 hover:text-white border-solid border-2 border-blue-600 rounded-md px-6 py-2 text-blue-600 text-xl;
+}

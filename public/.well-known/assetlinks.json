@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.moneymanager.app",
+      "sha256_cert_fingerprints": [
+        "44:A5:AD:58:E5:D7:59:D8:0F:3F:B8:40:27:7D:8C:75:3B:A4:0B:15:74:C3:66:4A:7C:4C:46:43:4D:6A:3C:60"
+      ]
+    }
+  }
+]
