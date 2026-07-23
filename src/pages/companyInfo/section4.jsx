@@ -36,7 +36,7 @@ const Section4 = () => {
 
       <div className="grid mobile:grid-cols-1 laptop:grid-cols-4 gap-3">
         {
-          data.map(el => <div key={el.id} className="rounded-lg shadow-xl overflow-hidden" {...aosDivAnimation((+el.id * 100) + 100)}>
+          data.map(el => <div key={el.id} className="rounded-lg shadow-xl overflow-hidden bg-white dark:bg-slate-900 border border-transparent dark:border-slate-800" {...aosDivAnimation((+el.id * 100) + 100)}>
             <img src={el.image} alt={el.name + el.id} className="w-full mobile:h-64 laptop:h-45 object-cover" />
             <div className="p-4">
               <p className="p font-semibold text-xl">{el.name}</p>

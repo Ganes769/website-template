@@ -42,20 +42,20 @@ const Section5 = () => {
         <h3 className="text-4xl laptop:text-5xl font-bold mb-4 font-display" {...aosTextAnimation(50)}>Our Services</h3>
         <div className="flex mobile:flex-col laptop:flex-row gap-10">
           <div className="flex-[1.2]">
-            <p className="text-lg text-slate-600 mb-8" {...aosTextAnimation(100)}>
+            <p className="text-lg text-slate-600 dark:text-slate-400 mb-8" {...aosTextAnimation(100)}>
               Merin Tech provides end-to-end digitization services from photography to custom software development.
             </p>
 
             {data.map((el) => (
               <div
                 key={el.id}
-                className="flex mobile:flex-col laptop:flex-row mobile:items-center laptop:items-start mobile:text-center laptop:text-left mb-6 p-4 rounded-xl hover:bg-brand-soft transition-colors duration-300"
+                className="flex mobile:flex-col laptop:flex-row mobile:items-center laptop:items-start mobile:text-center laptop:text-left mb-6 p-4 rounded-xl hover:bg-brand-soft dark:hover:bg-slate-800/70 transition-colors duration-300"
                 {...aosDivAnimation((+el.id * 100) + 100)}
               >
-                <img src={el.image} alt="" className="w-12 h-12 mb-2 mr-5" />
+                <img src={el.image} alt="" className="w-12 h-12 mb-2 mr-5 dark:bg-white/90 dark:rounded-lg dark:p-1.5" />
                 <div>
                   <h4 className="mb-1 text-xl font-semibold font-display">{el.title}</h4>
-                  <p className="text-[16px] text-slate-600">{el.description}</p>
+                  <p className="text-[16px] text-slate-600 dark:text-slate-400">{el.description}</p>
                 </div>
               </div>
             ))}

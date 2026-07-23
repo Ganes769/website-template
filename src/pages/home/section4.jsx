@@ -36,13 +36,13 @@ const Section4 = () => {
   ];
 
   return (
-    <section className="mb-20 px-4 py-20 bg-gradient-to-b from-slate-100 to-slate-50">
+    <section className="mb-20 px-4 py-20 bg-gradient-to-b from-slate-100 to-slate-50 dark:from-slate-900/70 dark:to-slate-950/60">
       <div className="flex flex-col items-center max-width-container">
         <p className="section-label" {...aosTextAnimation()}>Who we serve</p>
         <h3 className="text-4xl laptop:text-5xl font-bold text-center mb-6 font-display" {...aosTextAnimation(50)}>
           Digitize Business Operations Of Any Size
         </h3>
-        <p className="text-center max-w-3xl text-lg text-slate-600 mb-12" {...aosTextAnimation(100)}>
+        <p className="text-center max-w-3xl text-lg text-slate-600 dark:text-slate-400 mb-12" {...aosTextAnimation(100)}>
           We understand how costly and difficult it is to manage technical infrastructure — let us take care of it so you can focus on your core business.
         </p>
 
@@ -57,7 +57,7 @@ const Section4 = () => {
               <h4 className="business-type-card-heading">{el.title}</h4>
               <p className="business-type-card-desc">{el.description}</p>
               <Link to="/contact">
-                <button className="group-hover:border-white group-hover:text-white border border-slate-800 rounded-lg px-4 py-1.5 text-[15px] font-semibold transition-all duration-300 hover:px-6">
+                <button className="group-hover:border-white group-hover:text-white border border-slate-800 dark:border-slate-300 dark:text-slate-200 rounded-lg px-4 py-1.5 text-[15px] font-semibold transition-all duration-300 hover:px-6">
                   Learn more
                 </button>
               </Link>

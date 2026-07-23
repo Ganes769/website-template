@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="px-4 pt-20 bg-gradient-to-b from-brand-deep to-slate-950 w-full">
+    <footer className="px-4 pt-20 bg-gradient-to-b from-brand-deep to-slate-950 dark:from-slate-900 dark:to-slate-950 dark:border-t dark:border-slate-800 w-full">
       <div className="max-width-container">
         <div className="flex mobile:flex-col laptop:flex-row gap-12">
           <div className="flex-1 mb-4" {...aosTextAnimation()}>

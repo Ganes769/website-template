@@ -28,10 +28,10 @@ const programs = [
 const Academy = () => {
   return (
     <main>
-      <section className="bg-gray-50">
+      <section className="bg-gray-50 dark:bg-slate-900">
         <div className="max-width-container py-16 px-4 flex mobile:flex-col laptop:flex-row items-center gap-10">
           <div className="flex-1 mobile:text-center laptop:text-left">
-            <p className="text-blue-600 uppercase font-semibold mb-3">Merin Academy</p>
+            <p className="section-label">Merin Academy</p>
             <h1 className="h2" {...aosTextAnimation()}>
               Educating local innovators
             </h1>
@@ -61,11 +61,11 @@ const Academy = () => {
             {programs.map((program, index) => (
               <div
                 key={program.id}
-                className="p-8 rounded-lg border border-gray-100 bg-white shadow-sm"
+                className="lift-card p-8 rounded-lg border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm"
                 {...aosDivAnimation((index % 2) * 100 + 100)}
               >
-                <h3 className="text-2xl font-semibold text-blue-600 mb-3">{program.title}</h3>
-                <p className="text-lg mb-6">{program.description}</p>
+                <h3 className="text-2xl font-semibold text-blue-600 dark:text-sky-400 mb-3">{program.title}</h3>
+                <p className="text-lg text-slate-600 dark:text-slate-400 mb-6">{program.description}</p>
                 <Link to="/contact">
                   <button className="button-primary-outlined">Learn more</button>
                 </Link>
@@ -75,7 +75,7 @@ const Academy = () => {
         </div>
       </section>
 
-      <section className="px-4 py-16 bg-blue-950">
+      <section className="px-4 py-16 bg-blue-950 dark:bg-slate-900 dark:border-y dark:border-slate-800">
         <div className="max-width-container flex mobile:flex-col laptop:flex-row items-center gap-8">
           <div className="flex-1">
             <h2 className="text-4xl font-bold text-white mb-4" {...aosTextAnimation()}>

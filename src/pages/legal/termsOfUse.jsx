@@ -3,9 +3,9 @@ import { aosTextAnimation } from "utils/constants";
 const TermsOfUse = () => {
   return (
     <main>
-      <section className="bg-gray-50 py-16 px-4">
+      <section className="bg-gray-50 dark:bg-slate-900 py-16 px-4">
         <div className="max-width-container">
-          <p className="text-blue-600 uppercase font-semibold mb-3">Legal</p>
+          <p className="section-label">Legal</p>
           <h1 className="h2" {...aosTextAnimation()}>Terms of Use</h1>
           <p className="p max-w-[700px]" {...aosTextAnimation(100)}>
             By using the Merin Entertainment website, you agree to these terms. Please read them carefully before using our services or submitting information.

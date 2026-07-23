@@ -42,11 +42,11 @@ const Section6 = () => {
             {data.map((el) => (
               <div
                 key={el.id}
-                className="lift-card px-8 py-7 rounded-xl bg-white/95 border border-white/40"
+                className="lift-card px-8 py-7 rounded-xl bg-white/95 dark:bg-slate-900/95 border border-white/40 dark:border-slate-700/60"
                 {...aosDivAnimation((+el.id * 100) + 100)}
               >
-                <h4 className="text-xl font-semibold mb-3 text-blue-700 font-display">{el.title}</h4>
-                <p className="text-[16px] leading-relaxed text-slate-600 mb-5">{el.description}</p>
+                <h4 className="text-xl font-semibold mb-3 text-blue-700 dark:text-sky-400 font-display">{el.title}</h4>
+                <p className="text-[16px] leading-relaxed text-slate-600 dark:text-slate-400 mb-5">{el.description}</p>
                 <Link to={el.link}>
                   <button className="button-primary-outlined !text-[15px] !py-1.5">
                     Learn more

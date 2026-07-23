@@ -25,10 +25,10 @@ const pastHighlights = [
 const Events = () => {
   return (
     <main>
-      <section className="bg-gray-50">
+      <section className="bg-gray-50 dark:bg-slate-900">
         <div className="max-width-container py-16 px-4 flex mobile:flex-col laptop:flex-row items-center gap-10">
           <div className="flex-1 mobile:text-center laptop:text-left">
-            <p className="text-blue-600 uppercase font-semibold mb-3">Digital events</p>
+            <p className="section-label">Digital events</p>
             <h1 className="h2" {...aosTextAnimation()}>
               Trainings, demos & announcements
             </h1>
@@ -55,9 +55,9 @@ const Events = () => {
           </p>
 
           {upcomingEvents.length === 0 ? (
-            <div className="border border-dashed border-gray-300 rounded-lg py-16 px-6 text-center bg-gray-50" {...aosDivAnimation(150)}>
-              <p className="text-xl text-red-600 font-semibold mb-2">No events currently!</p>
-              <p className="text-lg text-gray-600 mb-6">
+            <div className="border border-dashed border-gray-300 dark:border-slate-700 rounded-lg py-16 px-6 text-center bg-gray-50 dark:bg-slate-900/60" {...aosDivAnimation(150)}>
+              <p className="text-xl text-red-600 dark:text-rose-400 font-semibold mb-2">No events currently!</p>
+              <p className="text-lg text-gray-600 dark:text-slate-400 mb-6">
                 We are preparing the next round of digital events. Stay tuned or contact us to get notified.
               </p>
               <Link to="/contact">
@@ -77,7 +77,7 @@ const Events = () => {
         </div>
       </section>
 
-      <section className="px-4 py-16 bg-white">
+      <section className="px-4 py-16 bg-white dark:bg-transparent">
         <div className="max-width-container">
           <h2 className="h2 mb-4" {...aosTextAnimation()}>What we host</h2>
           <p className="p mb-12 max-w-[700px]" {...aosTextAnimation(100)}>
@@ -88,11 +88,11 @@ const Events = () => {
             {pastHighlights.map((item, index) => (
               <div
                 key={item.id}
-                className="px-8 py-6 rounded-lg bg-gray-50 border border-gray-100"
+                className="lift-card px-8 py-6 rounded-lg bg-gray-50 dark:bg-slate-900 border border-gray-100 dark:border-slate-800"
                 {...aosDivAnimation(index * 100 + 100)}
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">{item.title}</h3>
-                <p className="text-lg">{item.description}</p>
+                <h3 className="text-xl font-semibold text-blue-600 dark:text-sky-400 mb-3">{item.title}</h3>
+                <p className="text-lg text-slate-600 dark:text-slate-400">{item.description}</p>
               </div>
             ))}
           </div>

@@ -22,7 +22,7 @@ const AutoCounter = ({ title, totalCount, hasPlus, timeoutInterval = 50 }) => {
 
   return (
     <div className="text-center mb-6">
-      <p className="text-blue-600 font-semibold text-3xl mb-1">{count} {hasPlus && "+"}</p>
+      <p className="text-blue-600 dark:text-sky-400 font-semibold text-3xl mb-1">{count} {hasPlus && "+"}</p>
       <p className="p uppercase font-semibold">{title}</p>
     </div>
   );

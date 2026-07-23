@@ -23,7 +23,7 @@ const reasons = [
 const Partner = () => {
   return (
     <main>
-      <section className="bg-blue-950">
+      <section className="bg-blue-950 dark:bg-slate-900 dark:border-b dark:border-slate-800">
         <div className="max-width-container py-20 px-4 flex mobile:flex-col laptop:flex-row items-center gap-10">
           <div className="flex-1 mobile:text-center laptop:text-left">
             <p className="text-blue-200 uppercase font-semibold mb-3">Partnership</p>
@@ -56,18 +56,18 @@ const Partner = () => {
             {reasons.map((item, index) => (
               <div
                 key={item.id}
-                className="p-8 rounded-lg bg-gray-50 border border-gray-100"
+                className="lift-card p-8 rounded-lg bg-gray-50 dark:bg-slate-900 border border-gray-100 dark:border-slate-800"
                 {...aosDivAnimation(index * 100 + 100)}
               >
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">{item.title}</h3>
-                <p className="text-lg">{item.description}</p>
+                <h3 className="text-xl font-semibold text-blue-600 dark:text-sky-400 mb-3">{item.title}</h3>
+                <p className="text-lg text-slate-600 dark:text-slate-400">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-16 bg-gray-50">
+      <section className="px-4 py-16 bg-gray-50 dark:bg-slate-900/50">
         <div className="max-width-container text-center">
           <h2 className="h2 mb-4" {...aosTextAnimation()}>Let&apos;s build together</h2>
           <p className="p mb-8 max-w-[600px] mx-auto" {...aosTextAnimation(100)}>

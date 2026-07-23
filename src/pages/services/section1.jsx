@@ -9,7 +9,7 @@ const Section1 = ({
   image
 }) => {
   return (
-    <section className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
+    <section className="bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 border-b border-slate-100 dark:border-slate-800">
       <div className="max-width-container py-14 px-4 mb-8 flex mobile:flex-col laptop:flex-row items-center gap-10">
         <div className="flex-1 mobile:text-center laptop:text-left">
           <p className="section-label">Service</p>

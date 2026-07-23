@@ -88,7 +88,7 @@ const services = [
 const Services = () => {
   return (
     <main>
-      <section className="bg-gradient-to-br from-slate-50 via-blue-50/50 to-white">
+      <section className="bg-gradient-to-br from-slate-50 via-blue-50/50 to-white dark:from-slate-900 dark:via-slate-900/60 dark:to-slate-950">
         <div className="max-width-container py-16 px-4 flex mobile:flex-col laptop:flex-row items-center gap-10">
           <div className="flex-1 mobile:text-center laptop:text-left">
             <p className="section-label">What we offer</p>
@@ -122,7 +122,7 @@ const Services = () => {
               <Link
                 key={service.id}
                 to={service.link}
-                className="group lift-card block bg-white border border-slate-100 rounded-2xl overflow-hidden"
+                className="group lift-card block bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden"
                 {...aosDivAnimation((index % 3) * 100 + 100)}
               >
                 <img
@@ -131,11 +131,11 @@ const Services = () => {
                   className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 font-display group-hover:text-blue-700 transition-colors">
+                  <h3 className="text-xl font-semibold mb-2 font-display group-hover:text-blue-700 dark:group-hover:text-sky-400 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-[16px] text-slate-600 mb-4">{service.description}</p>
-                  <span className="text-blue-700 font-semibold text-lg">Learn more →</span>
+                  <p className="text-[16px] text-slate-600 dark:text-slate-400 mb-4">{service.description}</p>
+                  <span className="text-blue-700 dark:text-sky-400 font-semibold text-lg">Learn more →</span>
                 </div>
               </Link>
             ))}
@@ -143,7 +143,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="px-4 py-16 bg-blue-950">
+      <section className="px-4 py-16 bg-blue-950 dark:bg-slate-900 dark:border-y dark:border-slate-800">
         <div className="max-width-container text-center">
           <h2 className="text-4xl font-bold text-white mb-4" {...aosTextAnimation()}>
             Need a custom package?

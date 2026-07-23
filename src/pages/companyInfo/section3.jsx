@@ -25,9 +25,9 @@ const Section3 = () => {
           </p>
         </div>
         <div className="flex-1 flex flex-col justify-center items-center laptop:px-10">
-          <img src={logo} alt="logo" className="mb-8" {...aosDivAnimation(300)} />
-          <div className="border-solid border-blue-200 border-[1px] shadow-xl p-10 rounded-lg" {...aosDivAnimation(500)}>
-            <h4 className="text-blue-600 text-xl mb-3 font-semibold">OUR MISSION</h4>
+          <img src={logo} alt="logo" className="mb-8 rounded-xl" {...aosDivAnimation(300)} />
+          <div className="border-solid border-blue-200 dark:border-slate-700 border-[1px] shadow-xl dark:bg-slate-900 p-10 rounded-lg" {...aosDivAnimation(500)}>
+            <h4 className="text-blue-600 dark:text-sky-400 text-xl mb-3 font-semibold">OUR MISSION</h4>
             <p className="p font-semibold text-lg">
               Merin Entertainment has its goal of being one of the leading companies in Nepal within a year of its establishment. As the people’s attraction and need towards new technology and Brand Promotion and awareness is flourishing, Merin Entertainment is making its mind and being prepared to grab this opportunity to achieve its target. |
             </p>

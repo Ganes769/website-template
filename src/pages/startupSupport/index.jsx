@@ -49,9 +49,9 @@ const StartupSupport = () => {
         style={{ backgroundImage: `url(${require("assets/images/peopleoworking.jpg")})` }}
         className="bg-no-repeat bg-cover bg-fixed"
       >
-        <div className="bg-white bg-opacity-80 py-20 px-4">
+        <div className="bg-white bg-opacity-80 dark:bg-slate-950 dark:bg-opacity-80 py-20 px-4">
           <div className="max-width-container mobile:text-center laptop:text-left">
-            <p className="text-blue-600 uppercase font-semibold mb-3">For founders</p>
+            <p className="section-label">For founders</p>
             <h1 className="h2 max-w-[900px]" {...aosTextAnimation()}>
               Startup Support Program
             </h1>
@@ -78,11 +78,11 @@ const StartupSupport = () => {
             {pillars.map((item, index) => (
               <div
                 key={item.id}
-                className="px-8 py-6 rounded-lg bg-white shadow-xl border border-gray-100"
+                className="lift-card px-8 py-6 rounded-lg bg-white dark:bg-slate-900 shadow-xl border border-gray-100 dark:border-slate-800"
                 {...aosDivAnimation(index * 100 + 100)}
               >
-                <h3 className="text-xl font-semibold mb-2 text-blue-600">{item.title}</h3>
-                <p className="text-lg mb-4">{item.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-blue-600 dark:text-sky-400">{item.title}</h3>
+                <p className="text-lg text-slate-600 dark:text-slate-400 mb-4">{item.description}</p>
                 <Link to="/contact">
                   <button className="button-primary-outlined">Learn more</button>
                 </Link>
@@ -92,21 +92,21 @@ const StartupSupport = () => {
         </div>
       </section>
 
-      <section className="px-4 py-16 bg-gray-50">
+      <section className="px-4 py-16 bg-gray-50 dark:bg-slate-900/50">
         <div className="max-width-container">
           <h2 className="h2 mb-4" {...aosTextAnimation()}>What you get</h2>
           <div className="grid mobile:grid-cols-1 laptop:grid-cols-2 gap-8 mt-10">
             {benefits.map((item, index) => (
               <div key={item.id} className="p-6" {...aosDivAnimation((index % 2) * 100 + 100)}>
                 <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-lg text-gray-700">{item.description}</p>
+                <p className="text-lg text-gray-700 dark:text-slate-400">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-16 bg-blue-950 text-center">
+      <section className="px-4 py-16 bg-blue-950 dark:bg-slate-900 dark:border-y dark:border-slate-800 text-center">
         <div className="max-width-container">
           <h2 className="text-4xl font-bold text-white mb-4" {...aosTextAnimation()}>
             Ready to bring your idea to life?

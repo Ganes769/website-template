@@ -15,7 +15,7 @@ const Section2 = ({
           {options.map((el, index) => (
             <div
               key={el.id}
-              className="lift-card mobile:p-4 laptop:p-8 text-center rounded-2xl border border-slate-100 bg-white"
+              className="lift-card mobile:p-4 laptop:p-8 text-center rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900"
               {...aosTextAnimation(100 + index * 50)}
             >
               <img src={el.image} alt={el.title} className="mx-auto h-56 object-contain mb-5" />

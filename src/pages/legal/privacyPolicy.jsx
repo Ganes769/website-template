@@ -3,9 +3,9 @@ import { aosTextAnimation } from "utils/constants";
 const PrivacyPolicy = () => {
   return (
     <main>
-      <section className="bg-gray-50 py-16 px-4">
+      <section className="bg-gray-50 dark:bg-slate-900 py-16 px-4">
         <div className="max-width-container">
-          <p className="text-blue-600 uppercase font-semibold mb-3">Legal</p>
+          <p className="section-label">Legal</p>
           <h1 className="h2" {...aosTextAnimation()}>Privacy Policy</h1>
           <p className="p max-w-[700px]" {...aosTextAnimation(100)}>
             This policy explains how Merin Entertainment collects, uses, and protects information you share when you visit our website or contact us.
