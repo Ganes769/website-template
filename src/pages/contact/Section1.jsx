@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { aosDivAnimation, aosTextAnimation } from "utils/constants";
 
 const Section1 = () => {
-
   const [formState, setFormState] = useState({
     fullName: "",
     mobile: "",
@@ -10,79 +10,97 @@ const Section1 = () => {
   });
 
   const handleChange = (event) => {
-    setFormState(prev => ({ ...prev, [event.target.name]: event.target.value }))
-  }
+    setFormState((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
 
-  // const handleSubmit = async () => {
-  // const response = await fetch("https://formsubmit.co/32d88121f57fd98c76090104c0966641", {
-  //   method: "POST", // *GET, POST, PUT, DELETE, etc.
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     // 'Content-Type': 'application/x-www-form-urlencoded',
-  //   },
-  //   body: JSON.stringify({
-  //     // _subject: formState.fullName,
-  //     email: formState.email,
-  //     // phone: formState.mobile,
-  //     description: formState.description
-  //   }), // body data type must match "Content-Type" header
-  // });
+  return (
+    <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+      <div className="max-width-container px-4">
+        <p className="section-label" {...aosTextAnimation()}>Get in touch</p>
+        <h2 className="h2 mb-4 max-w-3xl" {...aosTextAnimation(50)}>
+          Let&apos;s discuss your next project
+        </h2>
+        <p className="p mb-14 max-w-2xl" {...aosTextAnimation(100)}>
+          Tell us a bit about you, your project, and how best to reach you. We&apos;ll get right back to you.
+        </p>
 
-  // console.log(response)
+        <div className="flex mobile:flex-col laptop:flex-row gap-12">
+          <div className="flex-1" {...aosDivAnimation(150)}>
+            <h4 className="text-2xl font-semibold font-display mb-3 text-slate-900">Contact details</h4>
+            <p className="p text-blue-800 mb-8">
+              Email us at <strong>merinentertainment@gmail.com</strong> or call the office below.
+            </p>
 
-  // const newWindow = window.open();
-  // newWindow.document.open();
-  // newWindow.document.write(response.body);
-  // newWindow.document.close()
-  // }
-
-  return <section className="py-16 bg-gray-50">
-    <div className="max-width-container px-4">
-      <h2 className="h2 mb-16">Contact us to Discuss More on Your Project</h2>
-
-      <div className="flex mobile:flex-col laptop:flex-row">
-        <div className="flex-1 mb-12">
-          <p className="p mb-10">Contact us to Discuss More on Your Project
-            Please tell us a bit about you, your project, and how best to reach you. We'll get right back to you.</p>
-
-          <h4 className="p text-3xl font-semibold">Contact us</h4>
-          <p className="p text-blue-800 mb-10">Please email us at <strong>merinentertainment@gmail.com</strong> or call us at below contact offices</p>
-
-          <p className="p text-2xl font-semibold text-blue-800">NEPAL</p>
-          <p className="p">Basuki Marg, Mid-Baneshwor (Near Kantipur College of Management and Information Technology),House no.253 Kathmandu, Nepal</p>
-          <p className="p">+977 9842983111</p>
-        </div>
-
-        <div className="flex-1 laptop:px-10">
-          <form
-            action="https://formsubmit.co/32d88121f57fd98c76090104c0966641" method="POST"
-            className="flex flex-col"
-          >
-            <label className="mb-1 p font-semibold" htmlFor="fullName">Full Name</label>
-            <input value={formState.fullName} placeholder="Full name" name="fullName" onChange={handleChange} className="border-[1px] border-gray-400 rounded-md mb-4 px-4 py-2" required />
-
-            <label className="mb-1 p font-semibold" htmlFor="mobile">Mobile</label>
-            <input type="number" value={formState.mobile} placeholder="Mobile" name="mobile" onChange={handleChange} className="border-[1px] border-gray-400 rounded-md mb-4 px-4 py-2" required />
-
-            <label className="mb-1 p font-semibold" htmlFor="email">Email</label>
-            <input type="email" value={formState.email} placeholder="Email" name="email" onChange={handleChange} className="border-[1px] border-gray-400 rounded-md mb-4 px-4 py-2" />
-
-            <label className="mb-1 p font-semibold" htmlFor="description">Tell us about your project</label>
-            <textarea rows={8} value={formState.description} placeholder="" name="description" onChange={handleChange} className="border-[1px] border-gray-400 rounded-md mb-4 px-4 py-2" required />
-
-            <div>
-              <input type="submit" class="btn" value="Send" className="button-primary bg-blue-600 cursor-pointer" />
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-xl font-semibold text-blue-800 font-display mb-2">Nepal</p>
+              <p className="p mb-2">
+                Basuki Marg, Mid-Baneshwor (Near Kantipur College of Management and Information Technology), House no.253 Kathmandu, Nepal
+              </p>
+              <p className="p !text-slate-900 font-semibold">+977 9842983111</p>
             </div>
+          </div>
 
-          </form>
+          <div className="flex-1" {...aosDivAnimation(250)}>
+            <form
+              action="https://formsubmit.co/32d88121f57fd98c76090104c0966641"
+              method="POST"
+              className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 laptop:p-8 shadow-sm"
+            >
+              <label className="mb-1 font-semibold text-slate-800" htmlFor="fullName">Full Name</label>
+              <input
+                id="fullName"
+                value={formState.fullName}
+                placeholder="Full name"
+                name="fullName"
+                onChange={handleChange}
+                className="form-input"
+                required
+              />
 
-          <a href="myapp://(tabs)/home">myapp://(tabs)/home</a>
-          <a href="myapp://(tabs)/home/index">myapp://(tabs)/home/index</a>
+              <label className="mb-1 font-semibold text-slate-800" htmlFor="mobile">Mobile</label>
+              <input
+                id="mobile"
+                type="tel"
+                value={formState.mobile}
+                placeholder="Mobile"
+                name="mobile"
+                onChange={handleChange}
+                className="form-input"
+                required
+              />
 
+              <label className="mb-1 font-semibold text-slate-800" htmlFor="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                value={formState.email}
+                placeholder="Email"
+                name="email"
+                onChange={handleChange}
+                className="form-input"
+              />
+
+              <label className="mb-1 font-semibold text-slate-800" htmlFor="description">Tell us about your project</label>
+              <textarea
+                id="description"
+                rows={7}
+                value={formState.description}
+                placeholder="Project goals, timeline, or questions…"
+                name="description"
+                onChange={handleChange}
+                className="form-input resize-y"
+                required
+              />
+
+              <div>
+                <input type="submit" value="Send message" className="button-primary cursor-pointer" />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-}
+    </section>
+  );
+};
 
 export default Section1;

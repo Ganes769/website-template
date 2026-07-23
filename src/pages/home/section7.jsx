@@ -2,27 +2,35 @@ import { Link } from "react-router-dom";
 import { aosDivAnimation, aosTextAnimation } from "utils/constants";
 
 const Section7 = () => {
-  return <section className='mb-16 px-4'>
-    <div className="max-width-container">
-      <h3 className='text-5xl font-bold mb-4' {...aosTextAnimation()}>Digital events</h3>
+  return (
+    <section className="mb-20 px-4">
+      <div className="max-width-container">
+        <p className="section-label" {...aosTextAnimation()}>Community</p>
+        <h3 className="text-4xl laptop:text-5xl font-bold mb-4 font-display" {...aosTextAnimation(50)}>
+          Digital events
+        </h3>
 
-      <div className="flex mobile:flex-col laptop:flex-row">
-        <div className="flex-1">
-          <p className='pb-6' {...aosTextAnimation(100)}>Get access to all our upcoming events, past events, announcements, product demos, trainings and many more.</p>
-
-          <Link to="/events">
-            <button className="hover:text-black border-solid border-[1px] border-blue-600 rounded-md px-4 py-1 text-blue-600 text-lg" {...aosDivAnimation(200)}>
-              View all events
-            </button>
-          </Link>
-        </div>
-        <div className="flex-[0.5]">
-          <p className="text-xl text-red-600 text-center my-4">No Events currently !</p>
+        <div className="flex mobile:flex-col laptop:flex-row gap-8 items-start">
+          <div className="flex-1">
+            <p className="pb-6 text-lg text-slate-600 max-w-xl" {...aosTextAnimation(100)}>
+              Get access to all our upcoming events, past events, announcements, product demos, trainings and many more.
+            </p>
+            <Link to="/events">
+              <button className="button-primary-outlined" {...aosDivAnimation(200)}>
+                View all events
+              </button>
+            </Link>
+          </div>
+          <div className="flex-[0.6] w-full" {...aosDivAnimation(250)}>
+            <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center">
+              <p className="text-lg font-semibold text-rose-600 mb-1">No events currently</p>
+              <p className="text-slate-500">New workshops and demos will appear here soon.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </section>
-}
+    </section>
+  );
+};
 
 export default Section7;

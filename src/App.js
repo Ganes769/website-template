@@ -1,8 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import './App.css';
 import {
   Route,
   Routes,
+  useLocation,
 } from "react-router-dom";
 import Header from 'components/header';
 import HomePage from 'pages/home';
@@ -27,49 +28,56 @@ import Partner from 'pages/partner';
 import PrivacyPolicy from 'pages/legal/privacyPolicy';
 import TermsOfUse from 'pages/legal/termsOfUse';
 import { Helmet } from 'react-helmet';
+import ScrollToTop, { initAos } from 'components/ScrollToTop';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    initAos();
+  }, []);
+
   return (
     <Fragment>
+      <Helmet>
+        <meta property="og:title" content="Merin Entertainment" />
+        <meta property="og:description" content="Empowering entrepreneurs through digitization — marketing, creative, and IT solutions." />
+        <meta property="og:image" content={`${window.location.origin}/android-chrome-512x512.png`} />
+        <meta property="og:image:alt" content="Merin Entertainment" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${window.location.origin}`} />
+      </Helmet>
 
-<Helmet>
-<meta property="og:title" content="Merin Entertainment"/>
-<meta property="og:description" content="Empowering entrepreneurs through digitization — marketing, creative, and IT solutions."/>
-<meta property="og:image" content= {`${window.location.origin}/android-chrome-512x512.png`}/>
-<meta property="og:image:alt" content="Merin Entertainment"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/> 
-<meta property="og:type" content="website"/>
-<meta property="og:url" content={`${window.location.origin}`}/>
-            </Helmet>
-
+      <ScrollToTop />
       <Header />
-      {/* <RouterProvider router={router} /> */}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+      <div key={location.pathname} className="page-enter">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
 
-        <Route path="/graphics-designing" element={<GraphicsDesigning />} />
-        <Route path="/photography" element={<Photography />} />
-        <Route path="/sms-marketing" element={<SmsMarketing />} />
-        <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
-        <Route path="/webisite" element={<Website />} />
-        <Route path="/email-marketing" element={<EmailMarketing />} />
-        <Route path="/seo" element={<SEO />} />
-        <Route path="/advertisements-postboost" element={<Advertisements />} />
-        <Route path="/domain-webhost" element={<Domain />} />
-        <Route path="/content-writing" element={<ContentWriting />} />
+          <Route path="/graphics-designing" element={<GraphicsDesigning />} />
+          <Route path="/photography" element={<Photography />} />
+          <Route path="/sms-marketing" element={<SmsMarketing />} />
+          <Route path="/social-media-marketing" element={<SocialMediaMarketing />} />
+          <Route path="/webisite" element={<Website />} />
+          <Route path="/email-marketing" element={<EmailMarketing />} />
+          <Route path="/seo" element={<SEO />} />
+          <Route path="/advertisements-postboost" element={<Advertisements />} />
+          <Route path="/domain-webhost" element={<Domain />} />
+          <Route path="/content-writing" element={<ContentWriting />} />
 
-        <Route path="/services" element={<Services />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/academy" element={<Academy />} />
-        <Route path="/startup-support" element={<StartupSupport />} />
-        <Route path="/partner" element={<Partner />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-use" element={<TermsOfUse />} />
-        <Route path="/company-info" element={<ComapanyInfo />} />
-        <Route path="/contact" element={<Contact />} />
-
-      </Routes>
+          <Route path="/services" element={<Services />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/academy" element={<Academy />} />
+          <Route path="/startup-support" element={<StartupSupport />} />
+          <Route path="/partner" element={<Partner />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="/company-info" element={<ComapanyInfo />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
       <Footer />
     </Fragment>
   );

@@ -1,17 +1,15 @@
-export const aosTextAnimation = (delay) => {
+export const aosTextAnimation = (delay = 0) => {
   return ({
     "data-aos": "fade-right",
-    // "data-aos-anchor-placement": "top-center",
-    "data-aos-delay": `${delay + 200}`,
+    "data-aos-delay": `${delay + 100}`,
     "data-aos-duration": "800"
   })
 }
 
-export const aosDivAnimation = (delay) => {
+export const aosDivAnimation = (delay = 0) => {
   return ({
     "data-aos": "fade-up",
-    // "data-aos-anchor-placement": "top-center",
-    "data-aos-delay": `${delay + 200}`,
+    "data-aos-delay": `${delay + 100}`,
     "data-aos-duration": "800"
   })
 }

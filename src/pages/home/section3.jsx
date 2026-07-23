@@ -1,36 +1,35 @@
-import image from 'assets/images/Home_image_2.jpg';
+import image from 'assets/images/person_image.jpg';
 import { Link } from 'react-router-dom';
 import { aosDivAnimation } from 'utils/constants';
 
 const Section3 = () => {
-  return <section className="mb-16 flex mobile:px-0 laptop:px-12 justify-center">
-    <div className="shadow-lg px-6 pt-8 w-full flex mobile:flex-col laptop:flex-row rounded-xl mb-4 relative max-width-container" {...aosDivAnimation(100)} >
-
-      {/* <div className='text-center'> */}
-      <img src={image} className='h-[90px] inline-block mb-4 mobile:hidden laptop:block' alt="logo-1" />
-      <img src={image} className='h-[90px] inline-block mr-4 mobile:hidden laptop:block' alt="logo-1" />
-      {/* </div> */}
-
-      <div className='flex justify-center'>
-        <img src={image} className='h-[90px] inline-block mb-4 mobile:block laptop:hidden' alt="logo-1" />
-        <img src={image} className='h-[90px] inline-block mr-4 mobile:block laptop:hidden' alt="logo-1" />
+  return (
+    <section className="mb-20 px-4">
+      <div
+        className="lift-card relative max-width-container overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 px-6 py-10 laptop:px-12"
+        {...aosDivAnimation(100)}
+      >
+        <div className="flex mobile:flex-col laptop:flex-row gap-8 items-center">
+          <img
+            src={image}
+            className="h-24 w-24 rounded-full object-cover border-4 border-white shadow-md"
+            alt="Sushant Tandukar"
+          />
+          <div className="flex-1 mobile:text-center laptop:text-left">
+            <p className="section-label">Client voice</p>
+            <p className="mb-5 text-xl laptop:text-2xl leading-relaxed text-slate-700 font-medium">
+              &ldquo;Merin Entertainment helped us move from scattered marketing ideas to a clear digital presence. Professional, responsive, and genuinely invested in our growth.&rdquo;
+            </p>
+            <p className="text-xl font-semibold font-display text-slate-900">Sushant Tandukar</p>
+            <p className="text-slate-500">Software Developer (Frontend), Logica Beans</p>
+          </div>
+          <Link to="/contact" className="shrink-0">
+            <button className="button-primary">Let&apos;s talk</button>
+          </Link>
+        </div>
       </div>
-
-      <div className='mb-6'>
-        <p className='mb-4 text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aspernatur atque adipisci harum, ducimus, repellendus excepturi recusandae id animi consectetur architecto! Libero earum cumque excepturi quod veritatis iure alias qui!</p>
-
-        <p className='text-xl font-semibold'>Sushant Tandukar</p>
-        <p className='mb-2'>Software Developer (Frontend), Logica Beans</p>
-      </div>
-
-
-
-      <button className="text-white text-xl px-6 py-2 bg-blue-600 rounded-md hover:bg-blue-800 absolute -bottom-5 right-10"><Link to={"/contact"}>Let's talk</Link></button>
-    </div>
-
-
-
-  </section>
-}
+    </section>
+  );
+};
 
 export default Section3;

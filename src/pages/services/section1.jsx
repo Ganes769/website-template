@@ -8,25 +8,25 @@ const Section1 = ({
   buttonLink,
   image
 }) => {
-  return <section className="bg-white">
-    <div className="max-width-container py-12 px-4 mb-16 flex mobile:flex-col laptop:flex-row items-center">
-      <div className="flex-1 mobile:text-center laptop:text-left">
-        <h6 className="text-blue-600 uppercase font-semibold mb-3">Industry Types</h6>
-        <h2 className="h2" {...aosTextAnimation()}>{title}</h2>
-        <p className="p mb-8" {...aosTextAnimation(100)}>{desc}</p>
-        <Link to={buttonLink}>
-          <button className="button-primary" {...aosDivAnimation(200)}>
-            {buttonText}
-          </button>
-        </Link>
+  return (
+    <section className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
+      <div className="max-width-container py-14 px-4 mb-8 flex mobile:flex-col laptop:flex-row items-center gap-10">
+        <div className="flex-1 mobile:text-center laptop:text-left">
+          <p className="section-label">Service</p>
+          <h2 className="h2" {...aosTextAnimation()}>{title}</h2>
+          <p className="p mb-8 max-w-xl mx-auto laptop:mx-0" {...aosTextAnimation(100)}>{desc}</p>
+          <Link to={buttonLink}>
+            <button className="button-primary" {...aosDivAnimation(200)}>
+              {buttonText}
+            </button>
+          </Link>
+        </div>
+        <div className="flex-1 laptop:flex justify-end mobile:hidden" {...aosDivAnimation(200)}>
+          <img src={image} alt={title} className="max-w-lg w-full rounded-2xl shadow-lg float-soft" />
+        </div>
       </div>
-      <div className="flex-1 laptop:flex justify-end mobile:hidden">
-        <img src={image} alt="icons" className="max-w-lg w-full" {...aosDivAnimation(200)} />
-      </div>
-
-    </div>
-
-  </section>
-}
+    </section>
+  );
+};
 
 export default Section1;

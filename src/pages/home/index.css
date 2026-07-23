@@ -3,25 +3,22 @@
 @tailwind utilities;
 
 .business-type-card {
-  @apply px-10 py-6 rounded-lg bg-white hover:bg-blue-400 shadow-xl;
+  @apply px-8 py-7 rounded-xl bg-white border border-slate-100 shadow-sm hover:bg-blue-600;
+  transition: background 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .business-type-card-heading {
-  @apply text-xl font-semibold mb-2;
+  @apply text-xl font-semibold mb-2 font-display;
 }
 
 .business-type-card:hover .business-type-card-heading {
-  @apply text-xl font-semibold mb-2 text-white;
+  @apply text-white;
 }
 
 .business-type-card-desc {
-  @apply text-lg mb-4;
+  @apply text-[16px] leading-relaxed mb-5 text-slate-600;
 }
 
 .business-type-card:hover .business-type-card-desc {
-  @apply text-lg mb-4 text-white;
-}
-
-.business-type-card-button {
-  @apply hover:bg-blue-600 hover:text-white border-solid border-2 border-blue-600 rounded-md px-6 py-2 text-blue-600 text-xl;
+  @apply text-blue-50;
 }

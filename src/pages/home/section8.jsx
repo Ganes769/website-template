@@ -3,27 +3,37 @@ import { Link } from 'react-router-dom';
 import { aosDivAnimation, aosTextAnimation } from 'utils/constants';
 
 const Section8 = () => {
-  return <section className='mb-16 px-4 py-24 bg-blue-950'>
-    <div className='max-width-container flex'>
-      <div className='flex-1 flex flex-col justify-center'>
-        <h3 className='text-5xl font-bold mb-8 text-white' {...aosTextAnimation()}>Your Partner For Growth</h3>
+  return (
+    <section className="mb-20 px-4 py-20 bg-gradient-to-r from-brand-deep via-blue-900 to-blue-800">
+      <div className="max-width-container flex mobile:flex-col laptop:flex-row gap-10 items-center">
+        <div className="flex-1 flex flex-col justify-center mobile:text-center laptop:text-left">
+          <p className="text-sky-300 uppercase tracking-wider text-sm font-semibold mb-3" {...aosTextAnimation()}>
+            Partnership
+          </p>
+          <h3 className="text-4xl laptop:text-5xl font-bold mb-6 text-white font-display" {...aosTextAnimation(50)}>
+            Your Partner For Growth
+          </h3>
+          <p className="pb-8 text-blue-100 text-lg leading-relaxed" {...aosTextAnimation(100)}>
+            Merin Entertainment has its goal of being one of the leading companies in Nepal. As people&apos;s need for technology, brand promotion, and awareness flourishes, we are prepared to collaborate and grow together.
+          </p>
+          <div>
+            <Link to="/partner">
+              <button
+                className="border border-white/80 rounded-lg px-6 py-2.5 text-white text-lg font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300"
+                {...aosDivAnimation(200)}
+              >
+                Become our partner
+              </button>
+            </Link>
+          </div>
+        </div>
 
-        <p className='pb-6 text-white text-lg' {...aosTextAnimation(100)}>Merin Entertainment has its goal of being one of the leading companies in Nepal within a year of its establishment. As the people’s attraction and need towards new technology and Brand Promotion and awareness is flourishing, Merin Entertainment is making its mind and being prepared to grab this opportunity to achieve its target. </p>
-
-        <div>
-          <Link to={'/partner'}>
-            <button className="hover:bg-blue-600 border-solid border-[1px] border-white rounded-md px-6 py-2 text-white text-lg bg-blue-950" {...aosDivAnimation(200)}>
-              Become our partner
-            </button>
-          </Link>
+        <div className="flex-1 mobile:hidden laptop:flex justify-center" {...aosDivAnimation(300)}>
+          <img src={image} className="w-full max-w-[340px] rounded-full shadow-2xl float-soft" alt="Partner with Merin" />
         </div>
       </div>
-
-      <div className='flex-1 mobile:hidden laptop:flex justify-center' {...aosDivAnimation(400)}>
-        <img src={image} className='w-full max-w-[400px] rounded-full' alt='logo' />
-      </div>
-    </div>
-  </section>
-}
+    </section>
+  );
+};
 
 export default Section8;

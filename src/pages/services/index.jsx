@@ -88,10 +88,10 @@ const services = [
 const Services = () => {
   return (
     <main>
-      <section className="bg-gray-50">
+      <section className="bg-gradient-to-br from-slate-50 via-blue-50/50 to-white">
         <div className="max-width-container py-16 px-4 flex mobile:flex-col laptop:flex-row items-center gap-10">
           <div className="flex-1 mobile:text-center laptop:text-left">
-            <p className="text-blue-600 uppercase font-semibold mb-3">What we offer</p>
+            <p className="section-label">What we offer</p>
             <h1 className="h2" {...aosTextAnimation()}>
               End-to-end digitization services
             </h1>
@@ -105,7 +105,7 @@ const Services = () => {
             </Link>
           </div>
           <div className="flex-1 flex justify-center" {...aosDivAnimation(200)}>
-            <img src={hero} alt="Our services" className="w-full max-w-[450px] rounded-lg" />
+            <img src={hero} alt="Our services" className="w-full max-w-[450px] rounded-2xl shadow-xl float-soft" />
           </div>
         </div>
       </section>
@@ -122,20 +122,20 @@ const Services = () => {
               <Link
                 key={service.id}
                 to={service.link}
-                className="group block bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                className="group lift-card block bg-white border border-slate-100 rounded-2xl overflow-hidden"
                 {...aosDivAnimation((index % 3) * 100 + 100)}
               >
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-44 object-cover"
+                  className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-semibold mb-2 font-display group-hover:text-blue-700 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-[16px] text-gray-700 mb-4">{service.description}</p>
-                  <span className="text-blue-600 font-semibold text-lg">Learn more →</span>
+                  <p className="text-[16px] text-slate-600 mb-4">{service.description}</p>
+                  <span className="text-blue-700 font-semibold text-lg">Learn more →</span>
                 </div>
               </Link>
             ))}

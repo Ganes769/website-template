@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import { aosDivAnimation, aosTextAnimation } from 'utils/constants';
 
 const Section5 = () => {
-
   const data = [
     {
       id: "1",
@@ -19,7 +18,7 @@ const Section5 = () => {
     {
       id: "2",
       title: "Website / Webapp development",
-      description: "We make from informative sites to custom sofware according to your needs.",
+      description: "We make from informative sites to custom software according to your needs.",
       image: website,
     },
     {
@@ -34,36 +33,51 @@ const Section5 = () => {
       description: "We create content that is informative, engaging, and relevant to the target audience.",
       image: writing,
     },
-  ]
+  ];
 
-  return <section className="mb-16 px-4 pt-16">
-    <div className='max-width-container'>
-      <h3 className='text-5xl font-bold mb-4' {...aosTextAnimation()}>Our Services</h3>
-      <div className='flex mobile:flex-col laptop:flex-row'>
+  return (
+    <section className="mb-20 px-4 pt-8">
+      <div className="max-width-container">
+        <p className="section-label" {...aosTextAnimation()}>Capabilities</p>
+        <h3 className="text-4xl laptop:text-5xl font-bold mb-4 font-display" {...aosTextAnimation(50)}>Our Services</h3>
+        <div className="flex mobile:flex-col laptop:flex-row gap-10">
+          <div className="flex-[1.2]">
+            <p className="text-lg text-slate-600 mb-8" {...aosTextAnimation(100)}>
+              Merin Tech provides end-to-end digitization services from photography to custom software development.
+            </p>
 
-        <div className='flex-[1.2]'>
-          <p className='text-lg mb-6' {...aosTextAnimation(100)}>Merin Tech provides end-to-end digitization services from photography to custom sotware development.</p>
-
-          {
-            data.map(el => <div key={el.id} className='flex mobile:flex-col laptop:flex-row mobile:items-center laptop:items-start mobile:text-center laptop:text-left mobile:mb-4 laptop:mb-6' {...aosDivAnimation((+el.id * 100) + 100)}>
-              <img src={el.image} alt="icon" className='w-14 h-14 mb-2 mr-6' />
-              <div>
-                <h4 className='mb-1 text-xl font-semibold'>{el.title}</h4>
-                <p className='text-[16px]'>{el.description}</p>
+            {data.map((el) => (
+              <div
+                key={el.id}
+                className="flex mobile:flex-col laptop:flex-row mobile:items-center laptop:items-start mobile:text-center laptop:text-left mb-6 p-4 rounded-xl hover:bg-brand-soft transition-colors duration-300"
+                {...aosDivAnimation((+el.id * 100) + 100)}
+              >
+                <img src={el.image} alt="" className="w-12 h-12 mb-2 mr-5" />
+                <div>
+                  <h4 className="mb-1 text-xl font-semibold font-display">{el.title}</h4>
+                  <p className="text-[16px] text-slate-600">{el.description}</p>
+                </div>
               </div>
-            </div>)
-          }
-        </div>
+            ))}
+          </div>
 
-        <div className='flex-1 flex flex-col items-center'>
-          <img src={image} alt='display-item' className='w-full max-w-[450px] mb-3' {...aosDivAnimation(200)} />
-          <Link to={"/services"}>
-            <button className="text-white text-xl px-6 py-2 bg-blue-600 rounded-md hover:bg-blue-800" {...aosDivAnimation(300)}>Explore all services</button>
-          </Link>
+          <div className="flex-1 flex flex-col items-center">
+            <img
+              src={image}
+              alt="Our services"
+              className="w-full max-w-[450px] mb-5 rounded-2xl shadow-lg"
+              {...aosDivAnimation(200)}
+            />
+            <Link to="/services">
+              <button className="button-primary" {...aosDivAnimation(300)}>
+                Explore all services
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-}
+    </section>
+  );
+};
 
 export default Section5;
