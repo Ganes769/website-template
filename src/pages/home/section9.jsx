@@ -30,7 +30,7 @@ const Section9 = () => {
               key={index}
               src={logo.src}
               alt="Client logo"
-              className="h-16 laptop:h-20 opacity-80 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500"
+              className="h-16 laptop:h-20 opacity-80 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500 rounded-xl dark:bg-white/95 dark:p-2"
               {...aosDivAnimation(logo.delay)}
             />
           ))}

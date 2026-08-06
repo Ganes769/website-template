@@ -1,4 +1,3 @@
-import image from 'assets/images/services_image.jpg';
 import website from 'assets/svgs/website.svg';
 import design from 'assets/svgs/design.svg';
 import ads from 'assets/svgs/ads.svg';
@@ -12,68 +11,71 @@ const Section5 = () => {
     {
       id: "1",
       title: "Designing",
-      description: "Designing graphics, User Interfaces / User Experience.",
+      description: "Graphics, brand identity, and UI/UX that make your business look sharp and consistent.",
       image: design,
+      link: "/graphics-designing",
     },
     {
       id: "2",
-      title: "Website / Webapp development",
-      description: "We make from informative sites to custom software according to your needs.",
+      title: "Website & Web Apps",
+      description: "From informative sites to custom software built around your workflows and goals.",
       image: website,
+      link: "/webisite",
     },
     {
       id: "3",
-      title: "Marketing / Advertisements",
-      description: "We offer many social media marketing packages, posts boosts, google ads etc.",
+      title: "Marketing & Ads",
+      description: "Social campaigns, post boosts, and paid ads that put your brand in front of the right people.",
       image: ads,
+      link: "/social-media-marketing",
     },
     {
       id: "4",
       title: "Content Writing",
-      description: "We create content that is informative, engaging, and relevant to the target audience.",
+      description: "Clear, engaging copy for websites, campaigns, and ongoing content programs.",
       image: writing,
+      link: "/content-writing",
     },
   ];
 
   return (
-    <section className="mb-20 px-4 pt-8">
+    <section className="mb-24 px-4 pt-8">
       <div className="max-width-container">
-        <p className="section-label" {...aosTextAnimation()}>Capabilities</p>
-        <h3 className="text-4xl laptop:text-5xl font-bold mb-4 font-display" {...aosTextAnimation(50)}>Our Services</h3>
-        <div className="flex mobile:flex-col laptop:flex-row gap-10">
-          <div className="flex-[1.2]">
-            <p className="text-lg text-slate-600 mb-8" {...aosTextAnimation(100)}>
-              Merin Tech provides end-to-end digitization services from photography to custom software development.
+        <div className="flex mobile:flex-col laptop:flex-row laptop:items-end justify-between gap-6 mb-12">
+          <div>
+            <p className="section-label" {...aosTextAnimation()}>Capabilities</p>
+            <h3 className="text-4xl laptop:text-5xl font-bold font-display" {...aosTextAnimation(50)}>Our Services</h3>
+            <p className="text-lg text-slate-600 dark:text-slate-400 mt-3 max-w-xl" {...aosTextAnimation(100)}>
+              End-to-end digitization — from creative and content to websites and growth marketing.
             </p>
+          </div>
+          <Link to="/services" {...aosDivAnimation(150)}>
+            <button className="button-primary-outlined">View all services</button>
+          </Link>
+        </div>
 
-            {data.map((el) => (
-              <div
-                key={el.id}
-                className="flex mobile:flex-col laptop:flex-row mobile:items-center laptop:items-start mobile:text-center laptop:text-left mb-6 p-4 rounded-xl hover:bg-brand-soft transition-colors duration-300"
-                {...aosDivAnimation((+el.id * 100) + 100)}
-              >
-                <img src={el.image} alt="" className="w-12 h-12 mb-2 mr-5" />
+        <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 gap-5">
+          {data.map((el, index) => (
+            <Link
+              key={el.id}
+              to={el.link}
+              className="service-tile group block"
+              {...aosDivAnimation((index % 2) * 100 + 100)}
+            >
+              <div className="flex items-start gap-5">
+                <div className="shrink-0 w-14 h-14 rounded-xl bg-brand-soft dark:bg-slate-800 flex items-center justify-center">
+                  <img src={el.image} alt="" className="w-8 h-8" />
+                </div>
                 <div>
-                  <h4 className="mb-1 text-xl font-semibold font-display">{el.title}</h4>
-                  <p className="text-[16px] text-slate-600">{el.description}</p>
+                  <h4 className="mb-2 text-xl font-semibold font-display group-hover:text-blue-700 dark:group-hover:text-sky-400 transition-colors">
+                    {el.title}
+                  </h4>
+                  <p className="text-[16px] text-slate-600 dark:text-slate-400 mb-4">{el.description}</p>
+                  <span className="text-blue-700 dark:text-sky-400 font-semibold">Explore →</span>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="flex-1 flex flex-col items-center">
-            <img
-              src={image}
-              alt="Our services"
-              className="w-full max-w-[450px] mb-5 rounded-2xl shadow-lg"
-              {...aosDivAnimation(200)}
-            />
-            <Link to="/services">
-              <button className="button-primary" {...aosDivAnimation(300)}>
-                Explore all services
-              </button>
             </Link>
-          </div>
+          ))}
         </div>
       </div>
     </section>

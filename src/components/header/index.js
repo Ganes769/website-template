@@ -2,8 +2,8 @@ import logo from "assets/images/Merinlogo.jpg";
 import menuIcon from "assets/svgs/menu-icon.svg";
 import { useEffect, useState } from "react";
 import "./index.css";
-
 import { Link, useNavigate } from "react-router-dom";
+import ThemeToggle from "components/themeToggle";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,11 +38,14 @@ const Header = () => {
   }, [showMenu]);
 
   return (
-    <header className={`site-header px-4 py-3 sticky top-0 left-0 w-full z-20 ${scrolled ? "is-scrolled" : ""}`}>
+    <header className={`site-header px-4 sticky top-0 left-0 w-full z-20 ${scrolled ? "is-scrolled py-2.5" : "py-3.5"}`}>
       <div className="max-width-container">
         <nav className="w-full flex justify-between items-center gap-4">
-          <Link to="/" onClick={() => setShowMenu(false)} className="shrink-0">
-            <img src={logo} className="h-9 transition-transform duration-300 hover:scale-[1.03]" alt="Merin Entertainment" />
+          <Link to="/" onClick={() => setShowMenu(false)} className="shrink-0 flex items-center gap-2.5">
+            <img src={logo} className="h-9 rounded-md transition-transform duration-300 hover:scale-[1.03]" alt="Merin Entertainment" />
+            <span className="mobile:hidden desktop:inline font-display font-bold text-slate-900 dark:text-white tracking-tight">
+              Merin
+            </span>
           </Link>
 
           <div className="mobile:hidden laptop:flex items-center">
@@ -50,43 +53,51 @@ const Header = () => {
             <NavHoverLink title="Services" link="/services" subLinks={servicesLinks} />
             <NavHoverLink title="Events" link="/events" />
             <NavHoverLink title="Academy" link="/academy" />
-            <NavHoverLink title="Startup Support" link="/startup-support" />
+            <NavHoverLink title="Startup" link="/startup-support" />
             <NavHoverLink title="Company" link="/company-info" />
             <NavHoverLink title="Contact" link="/contact" />
           </div>
 
-          <button
-            className="mobile:hidden laptop:inline-flex button-primary-outlined !py-1.5 !px-5 !text-[15px]"
-            onClick={() => navigate("/contact")}
-          >
-            Contact Us
-          </button>
+          <div className="mobile:hidden laptop:flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              className="button-primary !py-2 !px-5 !text-[15px]"
+              onClick={() => navigate("/contact")}
+            >
+              Contact Us
+            </button>
+          </div>
 
-          <button
-            type="button"
-            className="mobile:block laptop:hidden p-1"
-            aria-label="Toggle menu"
-            onClick={() => setShowMenu((prev) => !prev)}
-          >
-            <img src={menuIcon} alt="" className="w-9 h-9" />
-          </button>
+          <div className="mobile:flex laptop:hidden items-center gap-2">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-200"
+              aria-label="Toggle menu"
+              onClick={() => setShowMenu((prev) => !prev)}
+            >
+              <img src={menuIcon} alt="" className="w-7 h-7" />
+            </button>
+          </div>
         </nav>
 
         {showMenu && (
-          <aside className="mobile:block laptop:hidden fixed inset-0 top-[61px] bg-white/95 backdrop-blur-md w-full h-[calc(100vh-61px)] py-6 px-4 overflow-y-auto animate-fade-up">
+          <aside className="mobile:block laptop:hidden fixed inset-0 top-[61px] bg-white/97 dark:bg-slate-950/97 backdrop-blur-md w-full h-[calc(100vh-61px)] py-6 px-4 overflow-y-auto animate-fade-up">
             <Link to="/services" onClick={() => setShowMenu(false)}>
-              <p className="text-2xl font-semibold text-blue-700 mb-3 font-display">Services</p>
+              <p className="text-2xl font-semibold text-blue-700 dark:text-sky-400 mb-3 font-display">Services</p>
             </Link>
             {servicesLinks.map((el) => (
               <Link key={el.id} to={el.link} onClick={() => setShowMenu(false)}>
-                <p className="transition-all text-lg mb-2 ml-4 hover:text-blue-600">{el.name}</p>
+                <p className="transition-all text-lg mb-2 ml-4 hover:text-blue-600 dark:text-slate-300 dark:hover:text-sky-300">{el.name}</p>
               </Link>
             ))}
-            <NavHoverLink title="Events" link="/events" onClick={() => setShowMenu(false)} />
-            <NavHoverLink title="Academy" link="/academy" onClick={() => setShowMenu(false)} />
-            <NavHoverLink title="Startup Support" link="/startup-support" onClick={() => setShowMenu(false)} />
-            <NavHoverLink title="Company" link="/company-info" onClick={() => setShowMenu(false)} />
-            <NavHoverLink title="Contact" link="/contact" onClick={() => setShowMenu(false)} />
+            <div className="mt-4 border-t border-slate-200 dark:border-slate-800 pt-2">
+              <NavHoverLink title="Events" link="/events" onClick={() => setShowMenu(false)} />
+              <NavHoverLink title="Academy" link="/academy" onClick={() => setShowMenu(false)} />
+              <NavHoverLink title="Startup Support" link="/startup-support" onClick={() => setShowMenu(false)} />
+              <NavHoverLink title="Company" link="/company-info" onClick={() => setShowMenu(false)} />
+              <NavHoverLink title="Contact" link="/contact" onClick={() => setShowMenu(false)} />
+            </div>
           </aside>
         )}
       </div>
@@ -100,16 +111,19 @@ const NavHoverLink = ({ title, link, onClick, subLinks }) => {
   return (
     <div className="nav-link-container">
       <Link to={link} onClick={onClick}>
-        <div className="nav-underline mr-4 text-[15px] desktop:text-base cursor-pointer hover:text-blue-700 font-semibold mobile:py-3 laptop:py-0 mobile:border-b mobile:border-slate-200 laptop:border-none">
+        <div className="nav-underline mr-4 text-[15px] desktop:text-base cursor-pointer hover:text-blue-700 dark:text-slate-200 dark:hover:text-sky-300 font-semibold mobile:py-3 laptop:py-0 mobile:border-b mobile:border-slate-200 dark:mobile:border-slate-800 laptop:border-none">
           {title}
         </div>
       </Link>
       {subLinks?.length > 0 && (
         <div className="relative nav-link-options-container">
-          <div className="absolute top-2 left-0 bg-white links-container p-6 rounded-xl columns-2 gap-4 min-w-[420px]">
+          <div className="absolute top-2 left-0 bg-white dark:bg-slate-900 links-container p-6 rounded-xl columns-2 gap-4 min-w-[440px]">
+            <Link to="/services" onClick={onClick} className="block mb-3 col-span-2">
+              <p className="text-sm font-semibold text-blue-700 dark:text-sky-400 uppercase tracking-wider">View all services →</p>
+            </Link>
             {subLinks.map((el) => (
               <Link key={el.id} to={el.link} onClick={onClick}>
-                <p className="transition-all duration-300 text-[15px] mb-2.5 mr-2 hover:text-blue-600 hover:translate-x-1">
+                <p className="transition-all duration-300 text-[15px] mb-2.5 mr-2 hover:text-blue-600 dark:text-slate-300 dark:hover:text-sky-300 hover:translate-x-1">
                   {el.name}
                 </p>
               </Link>

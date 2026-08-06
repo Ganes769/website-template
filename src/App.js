@@ -29,6 +29,7 @@ import PrivacyPolicy from 'pages/legal/privacyPolicy';
 import TermsOfUse from 'pages/legal/termsOfUse';
 import { Helmet } from 'react-helmet';
 import ScrollToTop, { initAos } from 'components/ScrollToTop';
+import ScrollToTopButton from 'components/ScrollToTopButton';
 
 function App() {
   const location = useLocation();
@@ -79,6 +80,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
+      <ScrollToTopButton />
     </Fragment>
   );
 }

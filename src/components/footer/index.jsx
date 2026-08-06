@@ -17,76 +17,99 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="px-4 pt-20 bg-gradient-to-b from-brand-deep to-slate-950 w-full">
-      <div className="max-width-container">
-        <div className="flex mobile:flex-col laptop:flex-row gap-12">
-          <div className="flex-1 mb-4" {...aosTextAnimation()}>
-            <h3 className="text-3xl laptop:text-4xl font-semibold mb-6 text-white font-display">
-              Merin Entertainment
+    <>
+      <section className="px-4 -mb-10 relative z-10">
+        <div
+          className="max-width-container rounded-3xl bg-gradient-to-r from-blue-700 via-blue-800 to-slate-900 px-8 py-10 laptop:px-12 flex mobile:flex-col laptop:flex-row items-center justify-between gap-6 shadow-xl"
+          {...aosTextAnimation()}
+        >
+          <div className="mobile:text-center laptop:text-left">
+            <h3 className="text-2xl laptop:text-3xl font-bold text-white font-display mb-2">
+              Ready to digitize your business?
             </h3>
-            <p className="text-blue-200 mb-6 max-w-md leading-relaxed">
-              Empowering entrepreneurs through digitization across Nepal and beyond.
+            <p className="text-blue-100 text-lg">
+              Tell us your goals — we&apos;ll recommend the right mix of design, marketing, and tech.
             </p>
+          </div>
+          <Link to="/contact" className="shrink-0">
+            <button className="bg-white text-blue-800 hover:bg-sky-100 font-semibold rounded-xl px-7 py-3 text-lg transition-colors duration-300">
+              Book a consultation
+            </button>
+          </Link>
+        </div>
+      </section>
 
-            <div className="mb-6">
-              <h5 className="text-white text-lg font-semibold mb-1">Nepal Office</h5>
-              <p className="text-blue-200 leading-relaxed">
-                Basuki Marg, Mid-Baneshwor<br />
-                (Near Kantipur College of Management and Information Technology)<br />
-                House no.253, Kathmandu, Nepal
+      <footer className="px-4 pt-24 bg-gradient-to-b from-brand-deep to-slate-950 dark:from-slate-900 dark:to-slate-950 dark:border-t dark:border-slate-800 w-full">
+        <div className="max-width-container">
+          <div className="flex mobile:flex-col laptop:flex-row gap-12">
+            <div className="flex-1 mb-4" {...aosTextAnimation()}>
+              <h3 className="text-3xl laptop:text-4xl font-semibold mb-6 text-white font-display">
+                Merin Entertainment
+              </h3>
+              <p className="text-blue-200 mb-6 max-w-md leading-relaxed">
+                Empowering entrepreneurs through digitization across Nepal and beyond.
               </p>
-              <p className="text-blue-200 mt-2">+977 (1) 9842983111</p>
+
+              <div className="mb-6">
+                <h5 className="text-white text-lg font-semibold mb-1">Nepal Office</h5>
+                <p className="text-blue-200 leading-relaxed">
+                  Basuki Marg, Mid-Baneshwor<br />
+                  (Near Kantipur College of Management and Information Technology)<br />
+                  House no.253, Kathmandu, Nepal
+                </p>
+                <p className="text-blue-200 mt-2">+977 (1) 9842983111</p>
+              </div>
+
+              <a
+                href="https://www.facebook.com/MerinEntertainment"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-blue-200 hover:text-white"
+              >
+                <img src={facebook} alt="" className="h-9 rounded-full" />
+                <span>Follow us on Facebook</span>
+              </a>
             </div>
 
-            <a
-              href="https://www.facebook.com/MerinEntertainment"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-blue-200 hover:text-white"
-            >
-              <img src={facebook} alt="" className="h-9 rounded-full" />
-              <span>Follow us on Facebook</span>
-            </a>
+            <div className="flex-1" {...aosTextAnimation(200)}>
+              <h4 className="text-lg font-semibold text-white mb-3 font-display">Services</h4>
+              <div className="columns-2 mb-8 gap-6">
+                {servicesLinks.map((link) => (
+                  <Link key={link.id} to={link.link}>
+                    <p className="text-blue-200/90 pb-1.5 text-[15px] hover:text-white transition-colors">
+                      {link.name}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <div className="flex gap-8">
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-white mb-3 font-display">About</h4>
+                  <Link to="/company-info"><p className="text-blue-200 pb-1.5 hover:text-white">Company</p></Link>
+                  <Link to="/startup-support"><p className="text-blue-200 pb-1.5 hover:text-white">Startup Support</p></Link>
+                  <Link to="/partner"><p className="text-blue-200 pb-1.5 hover:text-white">Partner with us</p></Link>
+                  <Link to="/academy"><p className="text-blue-200 pb-1.5 hover:text-white">Academy</p></Link>
+                  <Link to="/events"><p className="text-blue-200 pb-1.5 hover:text-white">Events</p></Link>
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-white mb-3 font-display">Contact</h4>
+                  <Link to="/contact"><p className="text-blue-200 pb-1.5 hover:text-white">Contact Us</p></Link>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="flex-1" {...aosTextAnimation(200)}>
-            <h4 className="text-lg font-semibold text-white mb-3 font-display">Services</h4>
-            <div className="columns-2 mb-8 gap-6">
-              {servicesLinks.map((link) => (
-                <Link key={link.id} to={link.link}>
-                  <p className="text-blue-200/90 pb-1.5 text-[15px] hover:text-white transition-colors">
-                    {link.name}
-                  </p>
-                </Link>
-              ))}
-            </div>
-            <div className="flex gap-8">
-              <div className="flex-1">
-                <h4 className="text-lg font-semibold text-white mb-3 font-display">About</h4>
-                <Link to="/company-info"><p className="text-blue-200 pb-1.5 hover:text-white">Company</p></Link>
-                <Link to="/startup-support"><p className="text-blue-200 pb-1.5 hover:text-white">Startup Support</p></Link>
-                <Link to="/partner"><p className="text-blue-200 pb-1.5 hover:text-white">Partner with us</p></Link>
-                <Link to="/academy"><p className="text-blue-200 pb-1.5 hover:text-white">Academy</p></Link>
-                <Link to="/events"><p className="text-blue-200 pb-1.5 hover:text-white">Events</p></Link>
-              </div>
-              <div className="flex-1">
-                <h4 className="text-lg font-semibold text-white mb-3 font-display">Contact</h4>
-                <Link to="/contact"><p className="text-blue-200 pb-1.5 hover:text-white">Contact Us</p></Link>
-              </div>
-            </div>
+          <div className="flex py-8 mt-8 border-t border-white/10 justify-between mobile:flex-col laptop:flex-row mobile:text-center laptop:text-left gap-3">
+            <p className="text-blue-200/80 text-sm">Copyright © 2023 Sushant Tandukar. All Rights Reserved.</p>
+            <p className="text-blue-200/80 text-sm">
+              <Link to="/terms-of-use" className="hover:text-white">Terms of Use</Link>
+              <span className="mx-2">·</span>
+              <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+            </p>
           </div>
         </div>
-
-        <div className="flex py-8 mt-8 border-t border-white/10 justify-between mobile:flex-col laptop:flex-row mobile:text-center laptop:text-left gap-3">
-          <p className="text-blue-200/80 text-sm">Copyright © 2023 Sushant Tandukar. All Rights Reserved.</p>
-          <p className="text-blue-200/80 text-sm">
-            <Link to="/terms-of-use" className="hover:text-white">Terms of Use</Link>
-            <span className="mx-2">·</span>
-            <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
-          </p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 
